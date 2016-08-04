@@ -20,6 +20,8 @@
 
  <div class="container">
 
+  <!--
+    usar los radio cuando se sepa JS para segmentar las tareas según su estado
     <form action="">
       <div class="state-tasks">
         <label class="radio-inline">
@@ -30,6 +32,7 @@
         </label>	
       </div>	
     </form>
+    -->
 
  	<div class="row">
  	  <div class="col-sm-12">
@@ -49,13 +52,13 @@
  	  	    <%num = 1%>
  	  	  	<%@tasks.each do |task|%>
  	  	  	  <tr>
- 	  	  	    <th scope="row"><%=num%></th>
- 	  	  	    <td><%=task.fetch("title")%></td>
+ 	  	  	    <th scope="row"><%= num %></th>
+ 	  	  	    <td><%= task.fetch("title") %></td>
  	  	  	    <td class="<%= task.fetch('done') == true ? 'success' : 'danger' %>"> 
  	  	  	      <%= task.fetch("done") == true ? 'Realizada' : 'Por hacer' %> 
  	  	  	    </td>
  	  	  	    <td>
- 	  	  	      <form action=<%="/done?id=#{task.fetch('id')}"%> method="post">
+ 	  	  	      <form action=<%= "/done?id=#{task.fetch('id')}" %> method="post">
  	  	  	        <% if task.fetch("done") == false %>
  	  	  	          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>	
  	  	  	        <% end %>  
@@ -63,7 +66,7 @@
  	  	  	    </td>
 
  	  	  	    <td></td>
- 	  	  	    <%num+=1%> 	
+ 	  	  	    <% num+=1 %> 	
  	  	  	  </tr>
  	  	  	<%end%>
              
