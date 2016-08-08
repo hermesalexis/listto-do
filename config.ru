@@ -1,2 +1,2 @@
-require './listo_do'
+require './listo_do.rb'
 run Sinatra::Application
