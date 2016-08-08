@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
 gem 'sinatra'
-require 'make_todo'
+gem 'make_todo'
